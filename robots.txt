@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://saber-e-poder1976.github.io/SiteAfiliadosaberepoder/sitemap.xml
