@@ -41,13 +41,28 @@
 </header>
 
 <nav>
-   <a href="index.html">Início</a>
+    <a href="index.html">Início</a>
     <a href="achadinhos.html">Achadinhos</a>
     <a href="calcados.html">Calçados</a>
-	<a href="mercadolivre.html">Mercado Livre</a>
+    <a href="mercadolivre.html">Mercado Livre</a>
     <a href="suplementos.html">Suplementos</a>
-   
 </nav>
+
+<!-- CONTADOR SOCIAL -->
+<div id="contador-social" style="
+    background:#fff3e0;
+    padding:15px;
+    margin:20px auto;
+    max-width:900px;
+    border-radius:10px;
+    text-align:center;
+    font-weight:bold;
+    color:#e65100;
+    box-shadow:0 0 10px rgba(0,0,0,0.05);
+">
+    👀 <span id="online"></span> pessoas visualizando agora <br>
+    📊 <span id="views"></span> visualizações hoje
+</div>
 
 <div class="container">
 
@@ -84,6 +99,19 @@
     <p>⚠️ Antes de usar qualquer suplemento, procure um profissional de saúde.</p>
     <p>© 2025 — Saber é Poder Recomenda | Conteúdo informativo com links afiliados</p>
 </footer>
+
+<script>
+  function random(min, max) {
+    return Math.floor(Math.random() * (max - min + 1)) + min;
+  }
+
+  document.getElementById("online").innerText = random(7, 18);
+  document.getElementById("views").innerText = random(60, 140);
+
+  setInterval(() => {
+    document.getElementById("online").innerText = random(7, 18);
+  }, 15000);
+</script>
 
 </body>
 </html>
