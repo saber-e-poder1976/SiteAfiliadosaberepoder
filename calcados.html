@@ -3,89 +3,125 @@
 <head>
 <meta charset="UTF-8">
 
-<!-- VERIFICAÇÃO GOOGLE SEARCH CONSOLE -->
 <meta name="google-site-verification" content="LnPctrS5m3kg37gQc37k7gMMK00d3HYIHH7rNllc6Vs" />
 
-<!-- TÍTULO (GOOGLE) -->
 <title>Calçados Confiáveis | Saber é Poder Recomenda</title>
 
-<!-- CANONICAL -->
 <link rel="canonical" href="https://saber-e-poder1976.github.io/SiteAfiliadosaberepoder/calcados.html" />
 
-<!-- SEO -->
 <meta name="description" content="Saber é Poder Recomenda lojas de calçados confiáveis com bom custo-benefício e links seguros.">
 <meta name="keywords" content="saber é poder recomenda, calçados confiáveis, tênis esportivos, tênis casual, afiliado shopee">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <style>
-    body { font-family: Arial, sans-serif; background: #f4f4f4; margin: 0; }
-    header { background: #0d47a1; color: #fff; padding: 25px; text-align: center; }
-    nav { background: #ffffff; padding: 15px; text-align: center; box-shadow: 0 2px 5px rgba(0,0,0,0.05); }
-    nav a { margin: 0 15px; text-decoration: none; font-weight: bold; color: #0d47a1; }
-    nav a:hover { color: #ff5722; }
+body { font-family: Arial, sans-serif; background: #f4f4f4; margin: 0; }
 
-    .container { max-width: 1100px; margin: auto; padding: 20px; }
+header {
+    background: #0d47a1;
+    color: #fff;
+    padding: 25px;
+    text-align: center;
+}
 
-    h2.categoria { color: #0d47a1; text-align: center; margin-bottom: 25px; }
+/* 🔥 LOGO PADRÃO */
+.logo {
+    width: 160px;
+    display: block;
+    margin: 0 auto 15px auto;
+}
 
-    .grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-        gap: 20px;
+/* 📱 MOBILE */
+@media (max-width: 600px) {
+    .logo {
+        width: 120px;
+        margin-bottom: 10px;
     }
+}
 
-    .card {
-        background: #fff;
-        border-radius: 10px;
-        padding: 20px;
-        text-align: center;
-        box-shadow: 0 0 10px rgba(0,0,0,0.05);
-    }
+nav {
+    background: #ffffff;
+    padding: 15px;
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
 
-    .card img {
-        width: 100%;
-        max-width: 200px;
-        border-radius: 8px;
-        margin-bottom: 15px;
-    }
+nav a {
+    display: inline-block;
+    margin: 8px 10px;
+    padding: 12px 16px;
+    text-decoration: none;
+    font-weight: bold;
+    color: #0d47a1;
+    border-radius: 6px;
+}
 
-    .card h3 {
-        font-size: 18px;
-        margin: 10px 0;
-    }
+nav a:hover {
+    background: #e3f2fd;
+    color: #ff5722;
+}
 
-    .card p {
-        font-size: 14px;
-        color: #555;
+@media (max-width: 600px) {
+    nav a {
+        display: block;
+        width: 90%;
+        margin: 10px auto;
     }
+}
 
-    .card a {
-        display: inline-block;
-        margin-top: 10px;
-        padding: 12px 22px;
-        background: #ff5722;
-        color: #fff;
-        text-decoration: none;
-        border-radius: 6px;
-        font-weight: bold;
-    }
+.container { max-width: 1100px; margin: auto; padding: 20px; }
 
-    .card a:hover {
-        background: #e64a19;
-    }
+h2.categoria { color: #0d47a1; text-align: center; margin-bottom: 25px; }
 
-    footer {
-        text-align: center;
-        padding: 20px;
-        font-size: 14px;
-        color: #666;
-    }
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 20px;
+}
+
+.card {
+    background: #fff;
+    border-radius: 10px;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 0 10px rgba(0,0,0,0.05);
+}
+
+.card img {
+    width: 100%;
+    max-width: 200px;
+    border-radius: 8px;
+    margin-bottom: 15px;
+}
+
+.card h3 { font-size: 18px; margin: 10px 0; }
+.card p { font-size: 14px; color: #555; }
+
+.card a {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 12px 22px;
+    background: #ff5722;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 6px;
+    font-weight: bold;
+}
+
+.card a:hover { background: #e64a19; }
+
+footer {
+    text-align: center;
+    padding: 20px;
+    font-size: 14px;
+    color: #666;
+}
 </style>
 </head>
 
 <body>
 
 <header>
+    <img src="img/logo.png" alt="Saber é Poder Recomenda" class="logo">
     <h1>Saber é Poder Recomenda</h1>
     <p>Calçados selecionados com bom custo-benefício e links confiáveis</p>
 </header>
@@ -93,14 +129,14 @@
 <nav>
     <a href="index.html">Início</a>
     <a href="achadinhos.html">Achadinhos</a>
-	<a href="amazon.html">Amazon</a>
+    <a href="amazon.html">Amazon</a>
     <a href="calcados.html">Calçados</a>
     <a href="magalu.html">Magazine Luiza</a>
     <a href="mercadolivre.html">Mercado Livre</a>
     <a href="suplementos.html">Suplementos</a>
 </nav>
 
-<!-- CONTADOR SOCIAL -->
+<!-- CONTADOR SOCIAL PADRÃO -->
 <div id="contador-social" style="
     background:#fff3e0;
     padding:15px;
@@ -117,7 +153,6 @@
 </div>
 
 <div class="container">
-
     <h2 class="categoria">Lojas de Calçados Confiáveis</h2>
 
     <div class="grid">
@@ -132,21 +167,21 @@
         <div class="card">
             <img src="img/calcados2.png" loading="lazy" alt="Tênis modernos">
             <h3>Tênis Modernos</h3>
-            <p>Modelos atuais com boa aceitação dos consumidores.</p>
+            <p>Modelos atuais com boa aceitação.</p>
             <a href="https://s.shopee.com.br/qcwhORyEV" target="_blank" rel="nofollow sponsored">Ver loja</a>
         </div>
 
         <div class="card">
             <img src="img/calcados3.png" loading="lazy" alt="Calçados casuais">
             <h3>Calçados Casuais</h3>
-            <p>Opções práticas para o dia a dia e lazer.</p>
+            <p>Opções práticas para o dia a dia.</p>
             <a href="https://s.shopee.com.br/5VOmFzE8EQ" target="_blank" rel="nofollow sponsored">Ver loja</a>
         </div>
 
         <div class="card">
             <img src="img/calcados4.png" loading="lazy" alt="Tênis estilo urbano">
             <h3>Estilo Urbano</h3>
-            <p>Tênis versáteis para diferentes ocasiões.</p>
+            <p>Tênis versáteis para várias ocasiões.</p>
             <a href="https://s.shopee.com.br/1qVTtGjM1j" target="_blank" rel="nofollow sponsored">Ver loja</a>
         </div>
 
@@ -160,7 +195,7 @@
         <div class="card">
             <img src="img/calcados6.png" loading="lazy" alt="Calçados em destaque">
             <h3>Calçados em Destaque</h3>
-            <p>Modelos populares entre os compradores.</p>
+            <p>Modelos populares entre compradores.</p>
             <a href="https://s.shopee.com.br/8fLo1sQva7" target="_blank" rel="nofollow sponsored">Ver loja</a>
         </div>
 
@@ -168,21 +203,31 @@
 </div>
 
 <footer>
-    <p>⚠️ As informações são de caráter informativo. Verifique avaliações e descrições nas lojas.</p>
+    <p>⚠️ As informações são de caráter informativo. Verifique avaliações nas lojas.</p>
     <p>© 2025 — Saber é Poder Recomenda | Conteúdo informativo com links afiliados</p>
 </footer>
 
 <script>
-  function random(min, max) {
+function random(min, max) {
     return Math.floor(Math.random() * (max - min + 1)) + min;
-  }
+}
 
-  document.getElementById("online").innerText = random(7, 18);
-  document.getElementById("views").innerText = random(60, 140);
-
-  setInterval(() => {
+document.getElementById("online").innerText = random(7, 18);
+setInterval(() => {
     document.getElementById("online").innerText = random(7, 18);
-  }, 15000);
+}, 15000);
+
+const today = new Date().toLocaleDateString();
+const storedDate = localStorage.getItem("viewsDate");
+let views = localStorage.getItem("viewsCount");
+
+if (storedDate !== today) {
+    views = random(60, 140);
+    localStorage.setItem("viewsDate", today);
+    localStorage.setItem("viewsCount", views);
+}
+
+document.getElementById("views").innerText = views;
 </script>
 
 </body>
