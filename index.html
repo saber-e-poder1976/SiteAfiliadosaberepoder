@@ -3,32 +3,38 @@
 <head>
     <meta charset="UTF-8">
 
-    <!-- VERIFICAÇÃO GOOGLE SEARCH CONSOLE -->
     <meta name="google-site-verification" content="LnPctrS5m3kg37gQc37k7gMMK00d3HYIHH7rNllc6Vs" />
 
-    <!-- TÍTULO DO SITE (GOOGLE) -->
     <title>Saber é Poder Recomenda | Suplementos e Calçados Confiáveis</title>
 
-    <!-- CANONICAL -->
     <link rel="canonical" href="https://saber-e-poder1976.github.io/SiteAfiliadosaberepoder/" />
 
-    <!-- SEO -->
     <meta name="description" content="Saber é Poder Recomenda suplementos e calçados confiáveis com informação clara e links seguros.">
     <meta name="keywords" content="saber é poder recomenda, suplementos confiáveis, creatina, omega 3, calçados esportivos, afiliado shopee">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            background: #f4f4f4;
-            margin: 0;
-        }
+        body { font-family: Arial, sans-serif; background: #f4f4f4; margin: 0; }
 
         header {
             background: #0d47a1;
             color: #fff;
             padding: 25px;
             text-align: center;
+        }
+
+        /* 🔥 LOGO PADRÃO */
+        .logo {
+            width: 160px;
+            display: block;
+            margin: 0 auto 15px auto;
+        }
+
+        @media (max-width: 600px) {
+            .logo {
+                width: 120px;
+                margin-bottom: 10px;
+            }
         }
 
         nav {
@@ -38,7 +44,6 @@
             box-shadow: 0 2px 5px rgba(0,0,0,0.05);
         }
 
-        /* 🔹 MENU OTIMIZADO PARA TOQUE */
         nav a {
             display: inline-block;
             margin: 8px 10px;
@@ -49,12 +54,8 @@
             border-radius: 6px;
         }
 
-        nav a:hover {
-            background: #e3f2fd;
-            color: #ff5722;
-        }
+        nav a:hover { background: #e3f2fd; color: #ff5722; }
 
-        /* 🔹 MOBILE (RESOLVE ALERTA DO GOOGLE) */
         @media (max-width: 600px) {
             nav a {
                 display: block;
@@ -63,16 +64,9 @@
             }
         }
 
-        .container {
-            max-width: 900px;
-            margin: auto;
-            padding: 20px;
-        }
+        .container { max-width: 900px; margin: auto; padding: 20px; }
 
-        h2.categoria {
-            color: #0d47a1;
-            margin-top: 40px;
-        }
+        h2.categoria { color: #0d47a1; margin-top: 40px; }
 
         .produto {
             background: #fff;
@@ -100,9 +94,7 @@
             font-weight: bold;
         }
 
-        .botao:hover {
-            background: #e64a19;
-        }
+        .botao:hover { background: #e64a19; }
 
         footer {
             text-align: center;
@@ -116,6 +108,7 @@
 <body>
 
 <header>
+    <img src="img/logo.png" alt="Saber é Poder Recomenda" class="logo">
     <h1>Saber é Poder Recomenda</h1>
     <p>Suplementos e calçados com informação clara e links confiáveis</p>
 </header>
@@ -123,7 +116,7 @@
 <nav>
     <a href="index.html">Início</a>
     <a href="achadinhos.html">Achadinhos</a>
-	<a href="amazon.html">Amazon</a>
+    <a href="amazon.html">Amazon</a>
     <a href="calcados.html">Calçados</a>
     <a href="magalu.html">Magazine Luiza</a>
     <a href="mercadolivre.html">Mercado Livre</a>
@@ -148,31 +141,29 @@
 
 <div class="container">
 
-    <!-- SUPLEMENTOS -->
     <h2 class="categoria">Suplementos</h2>
 
     <div class="produto">
         <img src="img/omega3.png" loading="lazy" alt="Ômega 3 1000mg" class="img-produto">
         <h3>Ômega 3 1000mg</h3>
         <p>Suplemento amplamente estudado. Pode auxiliar na saúde do cérebro, memória e coração.</p>
-        <a class="botao" href="https://s.shopee.com.br/40Zn2ziNvy" target="_blank">Conferir produto</a>
+        <a class="botao" href="https://s.shopee.com.br/40Zn2ziNvy" target="_blank" rel="nofollow sponsored noopener">Conferir produto</a>
     </div>
 
     <div class="produto">
         <img src="img/creatina.jpg" loading="lazy" alt="Creatina monohidratada" class="img-produto">
         <h3>Creatina Monohidratada</h3>
         <p>Pode auxiliar no ganho de força, desempenho físico e recuperação muscular.</p>
-        <a class="botao" href="https://s.shopee.com.br/5fi12x29Pu" target="_blank">Conferir produto</a>
+        <a class="botao" href="https://s.shopee.com.br/5fi12x29Pu" target="_blank" rel="nofollow sponsored noopener">Conferir produto</a>
     </div>
 
-    <!-- CALÇADOS -->
     <h2 class="categoria">Calçados</h2>
 
     <div class="produto">
         <img src="img/calcados1.png" loading="lazy" alt="Calçado esportivo" class="img-produto">
         <h3>Calçado Esportivo</h3>
         <p>Conforto e estabilidade para o dia a dia.</p>
-        <a class="botao" href="https://s.shopee.com.br/3Vdg15qCLu" target="_blank">Conferir produto</a>
+        <a class="botao" href="https://s.shopee.com.br/3Vdg15qCLu" target="_blank" rel="nofollow sponsored noopener">Conferir produto</a>
     </div>
 
 </div>
@@ -183,16 +174,31 @@
 </footer>
 
 <script>
-    function random(min, max) {
-        return Math.floor(Math.random() * (max - min + 1)) + min;
-    }
+function random(min, max) {
+    return Math.floor(Math.random() * (max - min + 1)) + min;
+}
 
+// Pessoas online variando
+document.getElementById("online").innerText = random(7, 18);
+setInterval(() => {
     document.getElementById("online").innerText = random(7, 18);
-    document.getElementById("views").innerText = random(60, 140);
+}, 15000);
 
-    setInterval(() => {
-        document.getElementById("online").innerText = random(7, 18);
-    }, 15000);
+// Contador que NÃO diminui
+const hoje = new Date().toLocaleDateString();
+let dataSalva = localStorage.getItem("data_views");
+let views = localStorage.getItem("views_count");
+
+if (dataSalva === hoje && views) {
+    views = parseInt(views) + random(2, 6);
+} else {
+    views = random(80, 120);
+}
+
+localStorage.setItem("views_count", views);
+localStorage.setItem("data_views", hoje);
+
+document.getElementById("views").innerText = views;
 </script>
 
 </body>
