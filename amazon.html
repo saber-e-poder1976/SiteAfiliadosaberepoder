@@ -6,115 +6,110 @@
 <meta name="google-site-verification" content="LnPctrS5m3kg37gQc37k7gMMK00d3HYIHH7rNllc6Vs" />
 
 <title>Produtos Amazon em Alta | Saber é Poder Recomenda</title>
+
 <link rel="canonical" href="https://saber-e-poder1976.github.io/SiteAfiliadosaberepoder/amazon.html" />
 
 <meta name="description" content="Veja os produtos mais vendidos da Amazon com avaliações positivas, alta procura e ótimo custo-benefício.">
+
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <style>
-body { font-family: Arial; background:#f4f4f4; margin:0; }
 
-header {
-    background:#0d47a1;
-    color:#fff;
-    padding:25px;
-    text-align:center;
+body{
+    font-family:Arial;
+    background:#f4f4f4;
+    margin:0;
+    color:#222;
 }
 
-.logo {
+/* HEADER */
+
+header{
+    background:linear-gradient(135deg,#0d47a1,#1565c0);
+    color:#fff;
+    padding:30px 20px;
+    text-align:center;
+    box-shadow:0 2px 10px rgba(0,0,0,0.1);
+}
+
+.logo{
     width:160px;
     display:block;
     margin:0 auto 15px;
 }
 
-@media (max-width:600px){
-.logo { width:120px; }
+header h1{
+    margin:10px 0 5px;
+    font-size:32px;
 }
 
-nav {
+header p{
+    margin:0;
+    opacity:0.95;
+}
+
+@media(max-width:600px){
+
+.logo{
+    width:120px;
+}
+
+header h1{
+    font-size:26px;
+}
+
+}
+
+/* NAV */
+
+nav{
     background:#fff;
     padding:15px;
     text-align:center;
     box-shadow:0 2px 5px rgba(0,0,0,0.05);
+    position:sticky;
+    top:0;
+    z-index:999;
 }
 
-nav a {
+nav a{
     display:inline-block;
     margin:8px;
     padding:10px 14px;
     text-decoration:none;
     color:#0d47a1;
     font-weight:bold;
-    border-radius:6px;
+    border-radius:8px;
+    transition:0.2s;
 }
 
-nav a:hover {
+nav a:hover{
     background:#e3f2fd;
     color:#ff5722;
 }
 
-.container {
+/* AMAZON SHOP */
+
+.amazon-shop{
     max-width:1100px;
-    margin:auto;
-    padding:20px;
-}
-
-/* SEO BOX */
-.texto-seo {
-    background:#fff;
-    padding:20px;
-    border-radius:10px;
-    margin-bottom:25px;
-}
-
-/* GRID APP */
-.grid {
-    display:grid;
-    grid-template-columns:repeat(auto-fit, minmax(240px,1fr));
-    gap:20px;
-}
-
-/* CARD */
-.card {
-    background:#fff;
-    border-radius:12px;
-    padding:20px;
+    margin:25px auto 10px;
+    padding:0 15px;
     text-align:center;
-    box-shadow:0 0 10px rgba(0,0,0,0.05);
+}
+
+.amazon-shop img{
+    width:100%;
+    max-width:1100px;
+    border-radius:14px;
+    box-shadow:0 5px 15px rgba(0,0,0,0.15);
     transition:0.2s;
 }
 
-.card:hover {
-    transform:scale(1.05);
+.amazon-shop img:hover{
+    transform:scale(1.01);
 }
 
-.card img {
-    width:100%;
-    max-width:180px;
-    margin-bottom:15px;
-}
-
-.card h3 {
-    font-size:16px;
-}
-
-.card p {
-    font-size:14px;
-    color:#555;
-}
-
-.botao {
-    display:inline-block;
-    margin-top:10px;
-    padding:12px 20px;
-    background:#ff9900;
-    color:#000;
-    text-decoration:none;
-    border-radius:6px;
-    font-weight:bold;
-}
-
-.botao:hover { background:#e68a00; }
+/* CONTADOR */
 
 #contador-social{
     background:#fff3e0;
@@ -125,129 +120,334 @@ nav a:hover {
     text-align:center;
     font-weight:bold;
     color:#e65100;
+    box-shadow:0 0 10px rgba(0,0,0,0.04);
 }
+
+/* CONTAINER */
+
+.container{
+    max-width:1100px;
+    margin:auto;
+    padding:20px;
+}
+
+/* SEO BOX */
+
+.texto-seo{
+    background:#fff;
+    padding:25px;
+    border-radius:12px;
+    margin-bottom:25px;
+    box-shadow:0 0 10px rgba(0,0,0,0.04);
+}
+
+.texto-seo h2{
+    margin-top:0;
+    color:#0d47a1;
+}
+
+/* GRID */
+
+.grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+    gap:20px;
+}
+
+/* CARD */
+
+.card{
+    background:#fff;
+    border-radius:14px;
+    padding:20px;
+    text-align:center;
+    box-shadow:0 0 12px rgba(0,0,0,0.06);
+    transition:0.25s;
+}
+
+.card:hover{
+    transform:translateY(-4px);
+    box-shadow:0 8px 20px rgba(0,0,0,0.12);
+}
+
+.card img{
+    width:100%;
+    max-width:180px;
+    margin-bottom:15px;
+}
+
+.card h3{
+    font-size:17px;
+    margin-bottom:10px;
+}
+
+.card p{
+    font-size:14px;
+    color:#555;
+    min-height:40px;
+}
+
+/* BOTÃO */
+
+.botao{
+    display:inline-block;
+    margin-top:10px;
+    padding:12px 20px;
+    background:#ff9900;
+    color:#000;
+    text-decoration:none;
+    border-radius:8px;
+    font-weight:bold;
+    transition:0.2s;
+}
+
+.botao:hover{
+    background:#e68a00;
+    transform:scale(1.03);
+}
+
+/* FOOTER */
+
+footer{
+    margin-top:40px;
+    background:#0d47a1;
+    color:#fff;
+    text-align:center;
+    padding:25px;
+}
+
+footer p{
+    margin:8px 0;
+}
+
 </style>
 </head>
 
 <body>
 
 <header>
-<img src="img/logo.png" class="logo">
+
+<img src="img/logo.png" class="logo" alt="Logo Saber é Poder">
+
 <h1>Saber é Poder Recomenda</h1>
+
 <p>Ofertas confiáveis, economia real e links oficiais</p>
+
 </header>
 
 <nav>
+
 <a href="index.html">Início</a>
+
 <a href="achadinhos.html">Achadinhos</a>
+
 <a href="amazon.html">Amazon</a>
+
 <a href="calcados.html">Calçados</a>
+
 <a href="magalu.html">Magazine Luiza</a>
+
 <a href="mercadolivre.html">Mercado Livre</a>
+
 <a href="suplementos.html">Suplementos</a>
+
 </nav>
 
+<!-- AMAZON SHOP -->
+
+<div class="amazon-shop">
+
+<a href="https://www.amazon.com.br/shop/saberepoder" target="_blank">
+
+<img src="img/amazon-shop-banner.png" alt="Loja Oficial Amazon Saber é Poder">
+
+</a>
+
+</div>
+
 <!-- CONTADOR -->
+
 <div id="contador-social">
+
 👀 <span id="online"></span> pessoas visualizando agora <br>
+
 📊 <span id="views"></span> visualizações hoje
+
 </div>
 
 <div class="container">
 
 <div class="texto-seo">
+
 <h2>Produtos mais vendidos da Amazon</h2>
+
 <p>
 Selecionamos produtos populares da Amazon com base em avaliações positivas,
 alto volume de compras e ótimo custo-benefício.
 </p>
+
 <p>
 A Amazon é referência em entrega rápida, segurança e variedade de produtos,
 sendo uma das maiores plataformas de ecommerce do mundo.
 </p>
+
 </div>
 
 <div class="grid">
 
 <div class="card">
-<img src="img/echo-dot.png">
+
+<img src="img/echo-dot.png" alt="Echo Dot">
+
 <h3>Echo Dot (Alexa)</h3>
+
 <p>Controle por voz e automação inteligente.</p>
-<a class="botao" href="https://amzn.to/4u2T1b2" target="_blank">Ver produto</a>
+
+<a class="botao" href="https://amzn.to/4u2T1b2" target="_blank">
+Ver produto
+</a>
+
 </div>
 
 <div class="card">
-<img src="img/echo-pop.png">
+
+<img src="img/echo-pop.png" alt="Echo Pop">
+
 <h3>Echo Pop</h3>
+
 <p>Compacto e potente com Alexa.</p>
-<a class="botao" href="https://amzn.to/4mK3c1z" target="_blank">Ver produto</a>
+
+<a class="botao" href="https://amzn.to/4mK3c1z" target="_blank">
+Ver produto
+</a>
+
 </div>
 
 <div class="card">
-<img src="img/firetv.png">
+
+<img src="img/firetv.png" alt="Fire TV Stick">
+
 <h3>Fire TV Stick</h3>
+
 <p>Transforma sua TV em Smart.</p>
-<a class="botao" href="https://amzn.to/48i6IKO" target="_blank">Ver produto</a>
+
+<a class="botao" href="https://amzn.to/48i6IKO" target="_blank">
+Ver produto
+</a>
+
 </div>
 
 <div class="card">
-<img src="img/jbl.png">
+
+<img src="img/jbl.png" alt="Fone JBL">
+
 <h3>Fone JBL Bluetooth</h3>
+
 <p>Som potente e sem fio.</p>
-<a class="botao" href="https://amzn.to/4sKta6N" target="_blank">Ver produto</a>
+
+<a class="botao" href="https://amzn.to/4sKta6N" target="_blank">
+Ver produto
+</a>
+
 </div>
 
 <div class="card">
-<img src="img/samsung.png">
+
+<img src="img/samsung.png" alt="Galaxy A36">
+
 <h3>Galaxy A36 5G</h3>
+
 <p>Desempenho e tecnologia moderna.</p>
-<a class="botao" href="https://amzn.to/3OSycQE" target="_blank">Ver produto</a>
+
+<a class="botao" href="https://amzn.to/3OSycQE" target="_blank">
+Ver produto
+</a>
+
 </div>
 
 <div class="card">
-<img src="img/kindle.png">
+
+<img src="img/kindle.png" alt="Kindle">
+
 <h3>Kindle</h3>
+
 <p>Leitura digital leve e prática.</p>
-<a class="botao" href="https://amzn.to/4eBQtfm" target="_blank">Ver produto</a>
+
+<a class="botao" href="https://amzn.to/4eBQtfm" target="_blank">
+Ver produto
+</a>
+
 </div>
 
 <div class="card">
-<img src="img/tomada.png">
+
+<img src="img/tomada.png" alt="Tomada Inteligente">
+
 <h3>Tomada Inteligente</h3>
+
 <p>Controle aparelhos pelo celular.</p>
-<a class="botao" href="https://amzn.to/4dWIUzM" target="_blank">Ver produto</a>
+
+<a class="botao" href="https://amzn.to/4dWIUzM" target="_blank">
+Ver produto
+</a>
+
 </div>
 
 <div class="card">
-<img src="img/relogio.png">
+
+<img src="img/relogio.png" alt="Smartwatch Amazfit">
+
 <h3>Smartwatch Amazfit</h3>
+
 <p>Monitora saúde e atividades.</p>
-<a class="botao" href="https://amzn.to/4mMyTaT" target="_blank">Ver produto</a>
-</div>
+
+<a class="botao" href="https://amzn.to/4mMyTaT" target="_blank">
+Ver produto
+</a>
 
 </div>
 
 </div>
+
+</div>
+
+<footer>
+
+<p><strong>Saber é Poder Recomenda</strong></p>
+
+<p>
+Produtos selecionados com foco em qualidade,
+avaliações positivas e custo-benefício.
+</p>
+
+<p>
+⚠️ Alguns links podem gerar comissão de afiliado sem custo adicional para você.
+</p>
+
+</footer>
 
 <script>
-function random(min, max) {
+
+function random(min,max){
 return Math.floor(Math.random() * (max - min + 1)) + min;
 }
 
-document.getElementById("online").innerText = random(7, 18);
+document.getElementById("online").innerText = random(7,18);
 
 const hoje = new Date().toLocaleDateString();
+
 let views = localStorage.getItem("views_count");
 
-if (views) {
-views = parseInt(views) + random(2, 5);
-} else {
-views = random(80, 140);
+if(views){
+views = parseInt(views) + random(2,5);
+}else{
+views = random(80,140);
 }
 
-localStorage.setItem("views_count", views);
+localStorage.setItem("views_count",views);
 
 document.getElementById("views").innerText = views;
+
 </script>
 
 </body>
