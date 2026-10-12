@@ -2,82 +2,107 @@
 <html lang="pt-BR">
 <head>
 <meta charset="UTF-8">
-
 <meta name="google-site-verification" content="LnPctrS5m3kg37gQc37k7gMMK00d3HYIHH7rNllc6Vs" />
-
 <meta name="p:domain_verify" content="50b0c0202b521917ad9df99f8db82509" />
-
 <title>Saber é Poder Recomenda | Ofertas e Achadinhos</title>
-
 <link rel="canonical" href="https://saber-e-poder1976.github.io/SiteAfiliadosaberepoder/" />
-
 <meta name="description" content="Produtos que estão bombando hoje com os melhores preços nas principais lojas.">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <style>
-body { font-family: Arial, sans-serif; background: #f4f4f4; margin: 0; }
-
+:root {
+    --azul-principal: #0d47a1;
+    --laranja-destaque: #ff5722;
+    --fundo-claro: #f4f4f4;
+    --branco: #ffffff;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body { 
+    font-family: Arial, sans-serif; 
+    background: var(--fundo-claro); 
+    margin: 0; 
+}
+/* CABEÇALHO */
 header {
-    background: #0d47a1;
+    background: var(--azul-principal);
     color: #fff;
     padding: 25px;
     text-align: center;
 }
-
-/* 🔥 LOGO PADRÃO IGUAL AO SITE */
 .logo {
     width: 160px;
     display: block;
     margin: 0 auto 15px auto;
 }
+header h1 { font-size: 1.5rem; margin-bottom: 5px; }
+header p { font-size: 1rem; opacity: 0.9; }
+@media (max-width: 600px) { .logo { width: 120px; } }
 
-@media (max-width: 600px) {
-    .logo {
-        width: 120px;
-        margin-bottom: 10px;
-    }
-}
-
+/* MENU PRINCIPAL — FIXO */
 nav {
-    background: #ffffff;
+    background: var(--branco);
     padding: 15px;
     text-align: center;
     box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    position: sticky;
+    top: 0;
+    z-index: 999;
 }
-
 nav a {
     display: inline-block;
     margin: 8px 10px;
     padding: 12px 16px;
     text-decoration: none;
     font-weight: bold;
-    color: #0d47a1;
+    color: var(--azul-principal);
     border-radius: 6px;
+    transition: 0.2s;
 }
-
-nav a:hover {
+nav a:hover,
+nav a.ativo {
     background: #e3f2fd;
-    color: #ff5722;
+    color: var(--laranja-destaque);
 }
-
 @media (max-width: 600px) {
-    nav a {
-        display: block;
-        width: 90%;
-        margin: 10px auto;
-    }
+    nav a { display: block; width: 90%; margin: 10px auto; }
 }
 
-.container {
-    max-width: 900px;
-    margin: auto;
-    padding: 20px;
+/* 🔹 MENU DE CATEGORIAS — FIXO ABAIXO DO PRINCIPAL */
+.menu-categorias {
+    background: #e3f2fd;
+    padding: 12px 15px;
+    text-align: center;
+    border-bottom: 1px solid #ddd;
+    position: sticky;
+    top: 70px; /* Fica logo abaixo do menu principal */
+    z-index: 998;
+}
+.menu-categorias span {
+    display: inline-block;
+    margin: 5px 8px;
+    padding: 8px 14px;
+    border-radius: 20px;
+    background: rgba(255,255,255,0.7);
+    color: var(--azul-principal);
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.2s;
+    font-size: 0.9rem;
+}
+.menu-categorias span:hover,
+.menu-categorias span.active {
+    background: var(--laranja-destaque);
+    color: #fff;
+}
+@media (max-width: 600px) {
+    .menu-categorias span { display: inline-block; margin: 4px; padding: 6px 10px; font-size: 0.8rem; }
 }
 
+.container { max-width: 900px; margin: auto; padding: 20px; }
 .botao {
     display: inline-block;
     margin: 10px;
-    background: #ff5722;
+    background: var(--laranja-destaque);
     color: #fff;
     padding: 14px 24px;
     text-decoration: none;
@@ -85,187 +110,234 @@ nav a:hover {
     font-weight: bold;
     transition: 0.2s;
 }
-
-.botao:hover {
-    background: #e64a19;
-    transform: scale(1.05);
-}
-
-/* BLOCO PRINCIPAL */
+.botao:hover { background: #e64a19; transform: scale(1.05); }
 .bloco-topo {
-    background:#fff;
-    padding:25px;
-    border-radius:12px;
-    text-align:center;
-    margin-bottom:25px;
-}
-
-/* ICONES */
-.lojas {
-    display:flex;
-    justify-content:space-around;
-    flex-wrap:wrap;
-    margin-top:30px;
-    padding-top:10px;
-}
-
-.loja-card{
-    background:#fff;
-    padding:15px;
-    border-radius:10px;
-    width:150px;
-    margin:10px;
-    box-shadow:0 0 10px rgba(0,0,0,0.05);
-    transition:0.2s;
-}
-
-.loja-card:hover{
-    transform:scale(1.08);
-}
-
-.loja-card a{
-    text-decoration:none;
-    color:#000;
-    display:flex;
-    flex-direction:column;
-    align-items:center;
-}
-
-.loja-card img{
-    width:60px;
-    margin-bottom:8px;
-}
-
-.loja-card p{
-    font-weight:bold;
-}
-
-.produto {
-    background: #fff;
-    padding: 20px;
+    background: var(--branco);
+    padding: 25px;
+    border-radius: 12px;
+    text-align: center;
+    margin-bottom: 25px;
     margin-top: 20px;
+}
+.lojas {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    margin-top: 30px;
+    padding-top: 10px;
+}
+.loja-card {
+    background: var(--branco);
+    padding: 15px;
     border-radius: 10px;
+    width: 150px;
+    margin: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.05);
+    transition: 0.2s;
 }
-
-.img-produto {
+.loja-card:hover { transform: scale(1.08); }
+.loja-card a {
+    text-decoration: none;
+    color: #000;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.loja-card img { width: 60px; margin-bottom: 8px; }
+.loja-card p { font-weight: bold; }
+#contador-social {
+    background: #fff3e0;
+    padding: 15px;
+    margin: 20px auto;
+    max-width: 900px;
+    border-radius: 10px;
+    text-align: center;
+    font-weight: bold;
+    color: #e65100;
+    box-shadow: 0 0 10px rgba(0,0,0,0.05);
+}
+/* Contador de resultados */
+.contador-resultados {
+    text-align: center;
+    font-weight: bold;
+    color: var(--azul-principal);
+    margin: 15px 0;
+}
+/* PRODUTOS */
+.secao-produtos {
+    max-width: 900px;
+    margin: 0 auto 40px;
+    padding: 0 20px;
+}
+.secao-produtos h2 {
+    text-align: center;
+    color: var(--azul-principal);
+    margin: 30px 0 20px;
+}
+.produtos-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 25px;
+}
+.product-card {
+    background: var(--branco);
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+    transition: 0.2s;
+    position: relative;
+}
+.product-card:hover { transform: translateY(-5px); }
+.product-card img {
     width: 100%;
-    max-width: 240px;
+    height: 200px;
+    object-fit: cover;
 }
-
-/* CONTADOR PADRÃO */
-#contador-social{
-    background:#fff3e0;
-    padding:15px;
-    margin:20px auto;
-    max-width:900px;
-    border-radius:10px;
-    text-align:center;
-    font-weight:bold;
-    color:#e65100;
-    box-shadow:0 0 10px rgba(0,0,0,0.05);
+.product-card h3 {
+    padding: 15px 15px 5px;
+    font-size: 0.95rem;
 }
+.precos { padding: 0 15px 15px; }
+.preco-original {
+    text-decoration: line-through;
+    color: #999;
+    font-size: 0.85rem;
+    display: block;
+    margin-bottom: 5px;
+}
+.preco-atual {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: var(--laranja-destaque);
+}
+.badge-desconto {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background: #e53935;
+    color: #fff;
+    padding: 5px 10px;
+    border-radius: 6px;
+    font-weight: bold;
+}
+.btn-primary {
+    display: block;
+    text-align: center;
+    background: var(--laranja-destaque);
+    color: #fff;
+    padding: 12px;
+    margin: 0 15px 15px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: 0.2s;
+}
+.btn-primary:hover { background: #e64a19; }
+footer {
+    background: var(--azul-principal);
+    color: #fff;
+    text-align: center;
+    padding: 25px;
+    margin-top: 40px;
+}
+footer p { margin: 5px 0; opacity: 0.9; }
 </style>
 </head>
-
 <body>
-
 <header>
-<img src="img/logo.png" alt="Saber é Poder Recomenda" class="logo">
-<h1>Saber é Poder Recomenda</h1>
-<p>Ofertas e produtos que estão bombando agora</p>
+  <img src="img/logo.png" alt="Saber é Poder Recomenda" class="logo">
+  <h1>Saber é Poder Recomenda</h1>
+  <p>Ofertas e produtos que estão bombando agora</p>
 </header>
 
+<!-- MENU PRINCIPAL — FIXO NO TOPO -->
 <nav>
-<a href="index.html">Início</a>
-<a href="achadinhos.html">Achadinhos</a>
-<a href="amazon.html">Amazon</a>
-<a href="calcados.html">Calçados</a>
-<a href="magalu.html">Magazine Luiza</a>
-<a href="mercadolivre.html">Mercado Livre</a>
-<a href="suplementos.html">Suplementos</a>
+  <a href="index.html" class="ativo">Início</a>
+  <a href="achadinhos.html">Achadinhos</a>
+  <a href="amazon.html">Amazon</a>
+  <a href="calcados.html">Calçados</a>
+  <a href="magalu.html">Magazine Luiza</a>
+  <a href="mercadolivre.html">Mercado Livre</a>
+  <a href="suplementos.html">Suplementos</a>
 </nav>
 
+<!-- 🔹 MENU DE CATEGORIAS — FIXO ABAIXO DO PRINCIPAL -->
+<div class="menu-categorias" id="menuCategorias">
+  <span data-categoria="todos" class="active">✨ Todos</span>
+  <span data-categoria="casa-e-organizacao">🏠 Casa</span>
+  <span data-categoria="moda-e-acessorios">👗 Moda</span>
+  <span data-categoria="tecnologia">💻 Tech</span>
+  <span data-categoria="beleza-e-skincare">💄 Beleza</span>
+  <span data-categoria="saude-e-bem-estar">💪 Saúde</span>
+  <span data-categoria="esportes-e-lazer">⚽ Esportes</span>
+  <span data-categoria="pets">🐾 Pets</span>
+  <span data-categoria="outros">📦 Outros</span>
+</div>
+
 <div class="container">
-
-<div class="bloco-topo">
-<h2>🛒 Escolha onde ver as ofertas</h2>
-
-<a class="botao" href="https://s.shopee.com.br/40Zn2ziNvy" target="_blank">🔥 Ofertas Shopee</a>
-<a class="botao" href="https://amzn.to/4ch69mS" target="_blank">⭐ Mais vendidos Amazon</a>
-<a class="botao" href="https://meli.la/2kBhgPy" target="_blank">🚚 Ofertas Mercado Livre</a>
-<a class="botao" href="https://divulgador.magalu.com/bJfjap5J" target="_blank">💥 Promoções Magalu</a>
+  <div class="bloco-topo">
+    <h2>🛒 Escolha onde ver as ofertas</h2>
+    <a class="botao" href="https://s.shopee.com.br/40Zn2ziNvy" target="_blank">🔥 Ofertas Shopee</a>
+    <a class="botao" href="https://amzn.to/4ch69mS" target="_blank">⭐ Mais vendidos Amazon</a>
+    <a class="botao" href="https://meli.la/2kBhgPy" target="_blank">🚚 Ofertas Mercado Livre</a>
+    <a class="botao" href="https://divulgador.magalu.com/bJfjap5J" target="_blank">💥 Promoções Magalu</a>
+    
+    <h3 style="margin-top: 30px; font-size: 1rem; color: #666;">🛍️ Ou acesse direto pela loja</h3>
+    <div class="lojas">
+      <div class="loja-card">
+        <a href="https://s.shopee.com.br/40Zn2ziNvy" target="_blank">
+          <img src="img/shopee.png" alt="Shopee">
+          <p>Shopee</p>
+        </a>
+      </div>
+      <div class="loja-card">
+        <a href="https://amzn.to/4ch69mS" target="_blank">
+          <img src="img/amazon.png" alt="Amazon">
+          <p>Amazon</p>
+        </a>
+      </div>
+      <div class="loja-card">
+        <a href="https://meli.la/2kBhgPy" target="_blank">
+          <img src="img/ml.png" alt="Mercado Livre">
+          <p>Mercado Livre</p>
+        </a>
+      </div>
+      <div class="loja-card">
+        <a href="https://divulgador.magalu.com/bJfjap5J" target="_blank">
+          <img src="img/magalu.png" alt="Magalu">
+          <p>Magalu</p>
+        </a>
+      </div>
+    </div>
+  </div>
 </div>
 
-<h3 style="text-align:center;">🛍️ Ou acesse direto pela loja</h3>
-
-<div class="lojas">
-
-<div class="loja-card">
-<a href="https://s.shopee.com.br/40Zn2ziNvy" target="_blank">
-<img src="img/shopee.png" alt="Shopee">
-<p>Shopee</p>
-</a>
-</div>
-
-<div class="loja-card">
-<a href="https://amzn.to/4ch69mS" target="_blank">
-<img src="img/amazon.png" alt="Amazon">
-<p>Amazon</p>
-</a>
-</div>
-
-<div class="loja-card">
-<a href="https://meli.la/2kBhgPy" target="_blank">
-<img src="img/ml.png" alt="Mercado Livre">
-<p>Mercado Livre</p>
-</a>
-</div>
-
-<div class="loja-card">
-<a href="https://divulgador.magalu.com/bJfjap5J" target="_blank">
-<img src="img/magalu.png" alt="Magazine Luiza">
-<p>Magalu</p>
-</a>
-</div>
-
-</div>
-
-</div>
-
-<!-- CONTADOR -->
 <div id="contador-social">
-👀 <span id="online"></span> pessoas visualizando agora <br>
-📊 <span id="views"></span> visualizações hoje
+  👀 <span id="online"></span> pessoas visualizando agora<br>
+  📊 <span id="views"></span> visualizações hoje
 </div>
 
-<div class="container">
+<!-- Contador de resultados -->
+<p class="contador-resultados" id="contadorResultados">Carregando produtos...</p>
 
-<h2>🔥 Mais vendidos hoje</h2>
-
-<div class="produto">
-<img src="img/omega3.png" class="img-produto" alt="Ômega 3">
-<h3>Ômega 3 1000mg</h3>
-<a class="botao" href="https://s.shopee.com.br/40Zn2ziNvy" target="_blank">Ver oferta</a>
-</div>
-
-<div class="produto">
-<img src="img/creatina.jpg" class="img-produto" alt="Creatina Monohidratada">
-<h3>Creatina Monohidratada</h3>
-<a class="botao" href="https://s.shopee.com.br/5fi12x29Pu" target="_blank">Ver oferta</a>
-</div>
-
-</div>
+<!-- LISTA DE PRODUTOS -->
+<section class="secao-produtos" id="produtos">
+  <h2>🔥 Produtos</h2>
+  <p style="text-align:center; color:#666; margin-bottom:20px;">Confira nossas recomendações atualizadas</p>
+  <div class="produtos-grid"></div>
+</section>
 
 <footer>
-<p>© 2025 — Saber é Poder Recomenda</p>
-<p>Conteúdo informativo com links afiliados.</p>
+  <p>© 2026 — Saber é Poder Recomenda</p>
+  <p>Conteúdo informativo com links afiliados · Preços sujeitos a alteração</p>
 </footer>
 
+<script src="js/app.js"></script>
 <script>
+// Contador
 function random(min, max) {
     return Math.floor(Math.random() * (max - min + 1)) + min;
 }
-
 document.getElementById("online").innerText = random(7, 18);
 setInterval(() => {
     document.getElementById("online").innerText = random(7, 18);
@@ -274,15 +346,40 @@ setInterval(() => {
 const today = new Date().toLocaleDateString();
 const storedDate = localStorage.getItem("viewsDate");
 let views = localStorage.getItem("viewsCount");
-
 if (storedDate !== today) {
     views = random(60, 140);
     localStorage.setItem("viewsDate", today);
     localStorage.setItem("viewsCount", views);
 }
-
 document.getElementById("views").innerText = views;
-</script>
 
+// Marca menu principal ativo
+document.querySelectorAll('nav a').forEach(link => {
+    link.addEventListener('click', function() {
+        document.querySelectorAll('nav a').forEach(a => a.classList.remove('ativo'));
+        this.classList.add('ativo');
+    });
+});
+
+// ✅ MENU DE CATEGORIAS — CLIQUE FILTRA E ROLA
+document.querySelectorAll('.menu-categorias span').forEach(botao => {
+    botao.addEventListener('click', function() {
+        // Destaque visual
+        document.querySelectorAll('.menu-categorias span').forEach(b => b.classList.remove('active'));
+        this.classList.add('active');
+        
+        // Rola até os produtos
+        const alvo = document.getElementById('produtos');
+        if (alvo) {
+            alvo.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+        
+        // Filtra via app.js
+        if (typeof aplicarFiltroPorCategoria === 'function') {
+            aplicarFiltroPorCategoria(this.dataset.categoria);
+        }
+    });
+});
+</script>
 </body>
 </html>
