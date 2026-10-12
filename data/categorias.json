@@ -1,0 +1,66 @@
+{
+  "version": 2,
+  "updated_at": "2026-08-14T01:27:08.343291+00:00",
+  "categories": [
+    {
+      "nome": "Casa e Organização",
+      "slug": "casa-e-organizacao",
+      "quantidade": 1500
+    },
+    {
+      "nome": "Moda e Acessórios",
+      "slug": "moda-e-acessorios",
+      "quantidade": 1500
+    },
+    {
+      "nome": "Outros",
+      "slug": "outros",
+      "quantidade": 1167
+    },
+    {
+      "nome": "Tecnologia",
+      "slug": "tecnologia",
+      "quantidade": 1032
+    },
+    {
+      "nome": "Bebê e Infantil",
+      "slug": "bebe-e-infantil",
+      "quantidade": 858
+    },
+    {
+      "nome": "Beleza e Skincare",
+      "slug": "beleza-e-skincare",
+      "quantidade": 775
+    },
+    {
+      "nome": "Esportes e Lazer",
+      "slug": "esportes-e-lazer",
+      "quantidade": 430
+    },
+    {
+      "nome": "Saúde e Bem-estar",
+      "slug": "saude-e-bem-estar",
+      "quantidade": 325
+    },
+    {
+      "nome": "Pets",
+      "slug": "pets",
+      "quantidade": 287
+    },
+    {
+      "nome": "Hobbies e Coleções",
+      "slug": "hobbies-e-colecoes",
+      "quantidade": 240
+    },
+    {
+      "nome": "Alimentos e Bebidas",
+      "slug": "alimentos-e-bebidas",
+      "quantidade": 162
+    },
+    {
+      "nome": "Livros e Papelaria",
+      "slug": "livros-e-papelaria",
+      "quantidade": 62
+    }
+  ]
+}
