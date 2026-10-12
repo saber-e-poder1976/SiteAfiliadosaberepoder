@@ -1,0 +1,38 @@
+{
+  "name": "Saber é Poder Recomenda",
+  "short_name": "Saber é Poder",
+  "description": "Produtos, achadinhos, ofertas e recomendações selecionadas pelo Saber é Poder.",
+  "lang": "pt-BR",
+  "dir": "ltr",
+  "start_url": "/SiteAfiliadosaberepoder/",
+  "scope": "/SiteAfiliadosaberepoder/",
+  "display": "standalone",
+  "orientation": "portrait-primary",
+  "theme_color": "#1565C0",
+  "background_color": "#f5f7fb",
+  "categories": [
+    "shopping",
+    "lifestyle",
+    "technology"
+  ],
+  "icons": [
+    {
+      "src": "/SiteAfiliadosaberepoder/img/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/SiteAfiliadosaberepoder/img/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/SiteAfiliadosaberepoder/img/icon-512-maskable.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ]
+}
