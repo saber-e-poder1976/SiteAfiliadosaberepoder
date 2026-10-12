@@ -14,44 +14,53 @@
     --laranja-destaque: #ff5722;
     --fundo-claro: #f4f4f4;
     --branco: #ffffff;
+    --altura-topo: 310px;
 }
 * { box-sizing: border-box; margin: 0; padding: 0; }
-html { scroll-behavior: smooth; }
+html { 
+    scroll-behavior: smooth; 
+    scroll-padding-top: var(--altura-topo);
+}
 body { 
     font-family: Arial, sans-serif; 
     background: var(--fundo-claro); 
     margin: 0; 
 }
-/* CABEÇALHO */
+
+/* 🔒 ÁREA FIXA */
+.cabecalho-fixo {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background: var(--fundo-claro);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+}
+
 header {
     background: var(--azul-principal);
     color: #fff;
-    padding: 25px;
+    padding: 15px 25px;
     text-align: center;
 }
 .logo {
-    width: 160px;
+    width: 120px;
     display: block;
-    margin: 0 auto 15px auto;
+    margin: 0 auto 10px auto;
 }
-header h1 { font-size: 1.5rem; margin-bottom: 5px; }
-header p { font-size: 1rem; opacity: 0.9; }
-@media (max-width: 600px) { .logo { width: 120px; } }
+header h1 { font-size: 1.3rem; margin-bottom: 3px; }
+header p { font-size: 0.9rem; opacity: 0.9; }
+@media (max-width: 600px) { .logo { width: 90px; } }
 
-/* MENU PRINCIPAL — FIXO */
 nav {
     background: var(--branco);
-    padding: 15px;
+    padding: 12px 15px;
     text-align: center;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
-    position: sticky;
-    top: 0;
-    z-index: 999;
+    border-bottom: 1px solid #eee;
 }
 nav a {
     display: inline-block;
-    margin: 8px 10px;
-    padding: 12px 16px;
+    margin: 5px 8px;
+    padding: 10px 14px;
     text-decoration: none;
     font-weight: bold;
     color: var(--azul-principal);
@@ -64,30 +73,54 @@ nav a.ativo {
     color: var(--laranja-destaque);
 }
 @media (max-width: 600px) {
-    nav a { display: block; width: 90%; margin: 10px auto; }
+    nav a { display: inline-block; margin: 5px 4px; padding: 8px 10px; font-size: 0.9rem; }
 }
 
-/* 🔹 MENU DE CATEGORIAS — FIXO ABAIXO DO PRINCIPAL */
-.menu-categorias {
-    background: #e3f2fd;
+.barra-pesquisa {
+    background: #fff;
     padding: 12px 15px;
     text-align: center;
+    border-bottom: 1px solid #e0e0e0;
+    max-width: 900px;
+    margin: 0 auto;
+}
+.barra-pesquisa input {
+    width: 100%;
+    max-width: 600px;
+    padding: 12px 20px;
+    font-size: 1rem;
+    border: 2px solid #ddd;
+    border-radius: 30px;
+    outline: none;
+    transition: 0.3s;
+}
+.barra-pesquisa input:focus {
+    border-color: var(--laranja-destaque);
+    box-shadow: 0 0 0 4px rgba(255, 87, 34, 0.15);
+}
+.barra-pesquisa p {
+    margin-top: 6px;
+    font-size: 0.8rem;
+    color: #888;
+}
+
+.menu-categorias {
+    background: #e3f2fd;
+    padding: 10px 15px;
+    text-align: center;
     border-bottom: 1px solid #ddd;
-    position: sticky;
-    top: 70px; /* Fica logo abaixo do menu principal */
-    z-index: 998;
 }
 .menu-categorias span {
     display: inline-block;
-    margin: 5px 8px;
-    padding: 8px 14px;
+    margin: 4px 6px;
+    padding: 7px 12px;
     border-radius: 20px;
     background: rgba(255,255,255,0.7);
     color: var(--azul-principal);
     font-weight: bold;
     cursor: pointer;
     transition: 0.2s;
-    font-size: 0.9rem;
+    font-size: 0.85rem;
 }
 .menu-categorias span:hover,
 .menu-categorias span.active {
@@ -95,9 +128,10 @@ nav a.ativo {
     color: #fff;
 }
 @media (max-width: 600px) {
-    .menu-categorias span { display: inline-block; margin: 4px; padding: 6px 10px; font-size: 0.8rem; }
+    .menu-categorias span { margin: 3px; padding: 5px 9px; font-size: 0.75rem; }
 }
 
+/* Conteúdo */
 .container { max-width: 900px; margin: auto; padding: 20px; }
 .botao {
     display: inline-block;
@@ -117,7 +151,6 @@ nav a.ativo {
     border-radius: 12px;
     text-align: center;
     margin-bottom: 25px;
-    margin-top: 20px;
 }
 .lojas {
     display: flex;
@@ -156,18 +189,18 @@ nav a.ativo {
     color: #e65100;
     box-shadow: 0 0 10px rgba(0,0,0,0.05);
 }
-/* Contador de resultados */
 .contador-resultados {
     text-align: center;
     font-weight: bold;
     color: var(--azul-principal);
     margin: 15px 0;
+    padding: 0 20px;
 }
-/* PRODUTOS */
 .secao-produtos {
     max-width: 900px;
     margin: 0 auto 40px;
     padding: 0 20px;
+    scroll-margin-top: calc(var(--altura-topo) - 10px);
 }
 .secao-produtos h2 {
     text-align: center;
@@ -244,35 +277,43 @@ footer p { margin: 5px 0; opacity: 0.9; }
 </style>
 </head>
 <body>
-<header>
-  <img src="img/logo.png" alt="Saber é Poder Recomenda" class="logo">
-  <h1>Saber é Poder Recomenda</h1>
-  <p>Ofertas e produtos que estão bombando agora</p>
-</header>
 
-<!-- MENU PRINCIPAL — FIXO NO TOPO -->
-<nav>
-  <a href="index.html" class="ativo">Início</a>
-  <a href="achadinhos.html">Achadinhos</a>
-  <a href="amazon.html">Amazon</a>
-  <a href="calcados.html">Calçados</a>
-  <a href="magalu.html">Magazine Luiza</a>
-  <a href="mercadolivre.html">Mercado Livre</a>
-  <a href="suplementos.html">Suplementos</a>
-</nav>
+<!-- 🔒 ÁREA FIXA -->
+<div class="cabecalho-fixo">
+  <header>
+    <img src="img/logo.png" alt="Saber é Poder Recomenda" class="logo">
+    <h1>Saber é Poder Recomenda</h1>
+    <p>Ofertas e produtos que estão bombando agora</p>
+  </header>
 
-<!-- 🔹 MENU DE CATEGORIAS — FIXO ABAIXO DO PRINCIPAL -->
-<div class="menu-categorias" id="menuCategorias">
-  <span data-categoria="todos" class="active">✨ Todos</span>
-  <span data-categoria="casa-e-organizacao">🏠 Casa</span>
-  <span data-categoria="moda-e-acessorios">👗 Moda</span>
-  <span data-categoria="tecnologia">💻 Tech</span>
-  <span data-categoria="beleza-e-skincare">💄 Beleza</span>
-  <span data-categoria="saude-e-bem-estar">💪 Saúde</span>
-  <span data-categoria="esportes-e-lazer">⚽ Esportes</span>
-  <span data-categoria="pets">🐾 Pets</span>
-  <span data-categoria="outros">📦 Outros</span>
+  <nav>
+    <a href="index.html" class="ativo">Início</a>
+    <a href="achadinhos.html">Achadinhos</a>
+    <a href="amazon.html">Amazon</a>
+    <a href="calcados.html">Calçados</a>
+    <a href="magalu.html">Magazine Luiza</a>
+    <a href="mercadolivre.html">Mercado Livre</a>
+    <a href="suplementos.html">Suplementos</a>
+  </nav>
+
+  <div class="barra-pesquisa">
+    <input type="text" id="pesquisa-produtos" placeholder="🔍 Pesquise por produto, marca, categoria...">
+    <p>Ex: "tênis", "ômega", "notebook", "beleza"</p>
+  </div>
+
+  <div class="menu-categorias" id="menuCategorias">
+    <span data-categoria="todos" class="active">✨ Todos</span>
+    <span data-categoria="casa-e-organizacao">🏠 Casa</span>
+    <span data-categoria="moda-e-acessorios">👗 Moda</span>
+    <span data-categoria="tecnologia">💻 Tech</span>
+    <span data-categoria="beleza-e-skincare">💄 Beleza</span>
+    <span data-categoria="saude-e-bem-estar">💪 Saúde</span>
+    <span data-categoria="esportes-e-lazer">⚽ Esportes</span>
+    <span data-categoria="pets">🐾 Pets</span>
+    <span data-categoria="outros">📦 Outros</span>
+  </div>
 </div>
+<!-- FIM DA ÁREA FIXA -->
 
 <div class="container">
   <div class="bloco-topo">
@@ -317,10 +358,8 @@ footer p { margin: 5px 0; opacity: 0.9; }
   📊 <span id="views"></span> visualizações hoje
 </div>
 
-<!-- Contador de resultados -->
 <p class="contador-resultados" id="contadorResultados">Carregando produtos...</p>
 
-<!-- LISTA DE PRODUTOS -->
 <section class="secao-produtos" id="produtos">
   <h2>🔥 Produtos</h2>
   <p style="text-align:center; color:#666; margin-bottom:20px;">Confira nossas recomendações atualizadas</p>
@@ -353,7 +392,7 @@ if (storedDate !== today) {
 }
 document.getElementById("views").innerText = views;
 
-// Marca menu principal ativo
+// Menu principal ativo
 document.querySelectorAll('nav a').forEach(link => {
     link.addEventListener('click', function() {
         document.querySelectorAll('nav a').forEach(a => a.classList.remove('ativo'));
@@ -361,24 +400,39 @@ document.querySelectorAll('nav a').forEach(link => {
     });
 });
 
-// ✅ MENU DE CATEGORIAS — CLIQUE FILTRA E ROLA
+// Categorias
 document.querySelectorAll('.menu-categorias span').forEach(botao => {
     botao.addEventListener('click', function() {
-        // Destaque visual
         document.querySelectorAll('.menu-categorias span').forEach(b => b.classList.remove('active'));
         this.classList.add('active');
-        
-        // Rola até os produtos
-        const alvo = document.getElementById('produtos');
-        if (alvo) {
-            alvo.scrollIntoView({ behavior: 'smooth', block: 'start' });
-        }
-        
-        // Filtra via app.js
         if (typeof aplicarFiltroPorCategoria === 'function') {
             aplicarFiltroPorCategoria(this.dataset.categoria);
         }
+        document.getElementById('pesquisa-produtos').value = '';
     });
+});
+
+// 🔍 PESQUISA com rolagem
+const campoPesquisa = document.getElementById('pesquisa-produtos');
+let timerPesquisa;
+campoPesquisa.addEventListener('input', () => {
+    clearTimeout(timerPesquisa);
+    timerPesquisa = setTimeout(() => {
+        const termo = campoPesquisa.value.trim();
+        if (termo.length > 0) {
+            document.querySelectorAll('.menu-categorias span').forEach(b => b.classList.remove('active'));
+        }
+        if (typeof buscarProdutos === 'function') {
+            buscarProdutos(termo);
+        }
+        // ⬇️ Rola até os resultados
+        setTimeout(() => {
+            const alvo = document.getElementById('produtos');
+            if (alvo) {
+                alvo.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }
+        }, 150);
+    }, 300);
 });
 </script>
 </body>
