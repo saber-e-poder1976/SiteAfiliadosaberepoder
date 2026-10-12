@@ -1,16 +1,24 @@
 /* ==========================================================
-   SABER É PODER RECOMENDA — V5.20 EXIBIÇÃO CORRIGIDA
-   ✅ Contador funcionando
-   ✅ Cards aparecendo na tela
+   SABER É PODER RECOMENDA — V5.22 COM PESQUISA INTEGRADA
+   ✅ Carrega categorias e produtos do JSON
+   ✅ Filtro por categoria clicável
+   ✅ 🔍 Pesquisa em tempo real (nome, descrição, categoria)
+   ✅ Combina categoria + pesquisa
+   ✅ Contador atualizado
+   ✅ Rolagem suave
 ========================================================== */
 "use strict";
+
 const $ = (seletor) => document.querySelector(seletor);
 const $$ = (seletor) => document.querySelectorAll(seletor);
+
 let categorias = [];
 let todosProdutos = [];
 let produtosFiltrados = [];
 let categoriaAtiva = "todos";
-// 🔑 SLUGS EXATOS do JSON
+let termoPesquisa = "";
+
+// SLUGS correspondentes ao JSON
 const SLUGS = {
     "todos": [],
     "casa-e-organizacao": ["Casa e Organização"],
@@ -26,6 +34,7 @@ const SLUGS = {
     "alimentos-e-bebidas": ["Alimentos e Bebidas"],
     "livros-e-papelaria": ["Livros e Papelaria"]
 };
+
 function normalizar(texto) {
     if (!texto) return "";
     return String(texto)
@@ -34,12 +43,14 @@ function normalizar(texto) {
         .replace(/[\u0300-\u036f]/g, "")
         .trim();
 }
+
 document.addEventListener("DOMContentLoaded", async () => {
     console.log("🚀 Página carregada — iniciando...");
     await carregarTudo();
-    vincularBotoes();
+    vincularBotoesCategorias();
     aplicarFiltro();
 });
+
 async function carregarTudo() {
     const caminhos = ["./", "./data/"];
     let carregou = false;
@@ -52,12 +63,14 @@ async function carregarTudo() {
             const dadosCat = await respCat.json();
             categorias = dadosCat.categories || [];
             console.log(`✅ ${categorias.length} categorias carregadas`);
+            
             const respProd = await fetch(`${caminho}produtos.json`);
             if (!respProd.ok) continue;
             const dadosProd = await respProd.json();
             todosProdutos = dadosProd.products || [];
             produtosFiltrados = [...todosProdutos];
             console.log(`✅ ${todosProdutos.length} produtos carregados`);
+            
             carregou = true;
             break;
         } catch (erro) {
@@ -71,48 +84,88 @@ async function carregarTudo() {
     renderizarProdutos();
     atualizarContador();
 }
-function vincularBotoes() {
-    $$("[data-categoria]").forEach(botao => {
-        botao.addEventListener("click", (e) => {
-            e.preventDefault();
+
+function vincularBotoesCategorias() {
+    $$(".menu-categorias span[data-categoria]").forEach(botao => {
+        botao.addEventListener("click", () => {
             categoriaAtiva = botao.dataset.categoria;
-            $$("[data-categoria]").forEach(b => b.classList.remove("active"));
+            termoPesquisa = ""; // Limpa pesquisa ao trocar categoria
+            $$(".menu-categorias span").forEach(b => b.classList.remove("active"));
             botao.classList.add("active");
             aplicarFiltro();
             rolarAteSecao();
+            // Limpa o campo de pesquisa na tela
+            const campo = $("#pesquisa-produtos");
+            if (campo) campo.value = "";
         });
     });
 }
+
+// Chamada pelo HTML
+function aplicarFiltroPorCategoria(slug) {
+    categoriaAtiva = slug;
+    termoPesquisa = "";
+    aplicarFiltro();
+    rolarAteSecao();
+}
+
+// Chamada pelo HTML
+function buscarProdutos(termo) {
+    termoPesquisa = normalizar(termo);
+    aplicarFiltro();
+}
+
 function aplicarFiltro() {
-    console.log(`🔍 Filtrando: ${categoriaAtiva}`);
+    console.log(`🔍 Filtro | Categoria: ${categoriaAtiva} | Busca: "${termoPesquisa}"`);
     
-    if (categoriaAtiva === "todos") {
-        produtosFiltrados = [...todosProdutos];
-    } else {
+    let resultado = [...todosProdutos];
+    
+    // Filtro por categoria
+    if (categoriaAtiva !== "todos") {
         const nomesEsperados = SLUGS[categoriaAtiva] || [categoriaAtiva];
-        
-        produtosFiltrados = todosProdutos.filter(produto => {
+        resultado = resultado.filter(produto => {
             const catProd = normalizar(produto.categoria || "");
             return nomesEsperados.some(nome => 
                 catProd === normalizar(nome) || catProd.includes(normalizar(nome))
             );
         });
     }
-    console.log(`✅ ${produtosFiltrados.length} produtos após filtro`);
+    
+    // Filtro por pesquisa
+    if (termoPesquisa.length > 0) {
+        resultado = resultado.filter(produto => {
+            const nome = normalizar(produto.nome || "");
+            const desc = normalizar(produto.descricao || "");
+            const cat = normalizar(produto.categoria || "");
+            return nome.includes(termoPesquisa) || 
+                   desc.includes(termoPesquisa) || 
+                   cat.includes(termoPesquisa);
+        });
+    }
+    
+    produtosFiltrados = resultado;
+    console.log(`✅ ${produtosFiltrados.length} produtos encontrados`);
+    
     renderizarProdutos();
     atualizarContador();
 }
+
 function renderizarProdutos() {
-    const container = document.querySelector(".produtos-grid");
+    const container = $(".produtos-grid");
     if (!container) {
-        console.log("❌ Container .produtos-grid NÃO encontrado no HTML!");
+        console.log("❌ Container .produtos-grid NÃO encontrado!");
         return;
     }
     container.innerHTML = "";
+    
     if (produtosFiltrados.length === 0) {
-        container.innerHTML = `<p style="grid-column:1/-1;text-align:center;padding:3rem;color:#666;">Nenhum produto encontrado 😔</p>`;
+        container.innerHTML = `<p style="grid-column:1/-1;text-align:center;padding:3rem;color:#666;">
+            Nenhum produto encontrado 😔<br>
+            Tente pesquisar por outro termo ou escolha outra categoria
+        </p>`;
         return;
     }
+    
     produtosFiltrados.forEach(produto => {
         const desconto = produto.desconto || 0;
         const card = document.createElement("div");
@@ -130,26 +183,35 @@ function renderizarProdutos() {
         `;
         container.appendChild(card);
     });
-    console.log(`✅ ${produtosFiltrados.length} cards renderizados`);
 }
+
 function atualizarContador() {
-    const el = document.querySelector(".contador-resultados");
+    const el = $("#contadorResultados");
     if (!el) return;
-    const cat = categorias.find(c => c.slug === categoriaAtiva);
-    const nome = cat?.nome || "Todos os produtos";
-    const qtd = cat?.quantidade ?? produtosFiltrados.length;
-    el.textContent = `${nome}: ${qtd} produto${qtd !== 1 ? "s" : ""}`;
+    
+    let texto = "";
+    if (termoPesquisa.length > 0) {
+        texto = `Pesquisa por "${termoPesquisa}": ${produtosFiltrados.length} resultado${produtosFiltrados.length !== 1 ? "s" : ""}`;
+    } else {
+        const cat = categorias.find(c => c.slug === categoriaAtiva);
+        const nome = cat?.nome || "Todos os produtos";
+        const qtd = cat?.quantidade ?? produtosFiltrados.length;
+        texto = `${nome}: ${qtd} produto${qtd !== 1 ? "s" : ""}`;
+    }
+    el.textContent = texto;
 }
+
 function rolarAteSecao() {
-    const alvo = document.getElementById("produtos");
+    const alvo = $("#produtos");
     if (alvo) {
         setTimeout(() => {
             alvo.scrollIntoView({ behavior: "smooth", block: "start" });
         }, 100);
     }
 }
+
 function mostrarAviso(texto) {
-    const container = document.querySelector(".produtos-grid");
+    const container = $(".produtos-grid");
     if (container) {
         container.innerHTML = `<p style="grid-column:1/-1;text-align:center;padding:3rem;color:#d32f2f;">⚠️ ${texto}</p>`;
     }
