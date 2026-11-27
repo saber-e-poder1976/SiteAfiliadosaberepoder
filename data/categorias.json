@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updated_at": "2026-11-26T21:05:59.348298+00:00",
+  "updated_at": "2026-11-27T20:50:05.395332+00:00",
   "categories": [
     {
       "nome": "Beleza e Skincare",
@@ -15,42 +15,42 @@
     {
       "nome": "Bebê e Infantil",
       "slug": "bebe-e-infantil",
-      "quantidade": 1250
+      "quantidade": 1257
     },
     {
       "nome": "Outros",
       "slug": "outros",
-      "quantidade": 1230
+      "quantidade": 1192
     },
     {
       "nome": "Moda e Acessórios",
       "slug": "moda-e-acessorios",
-      "quantidade": 1173
+      "quantidade": 1144
     },
     {
       "nome": "Tecnologia",
       "slug": "tecnologia",
-      "quantidade": 994
+      "quantidade": 1000
     },
     {
       "nome": "Esportes e Lazer",
       "slug": "esportes-e-lazer",
-      "quantidade": 600
+      "quantidade": 626
     },
     {
       "nome": "Livros e Papelaria",
       "slug": "livros-e-papelaria",
-      "quantidade": 531
+      "quantidade": 573
     },
     {
       "nome": "Alimentos e Bebidas",
       "slug": "alimentos-e-bebidas",
-      "quantidade": 412
+      "quantidade": 402
     },
     {
       "nome": "Saúde e Bem-estar",
       "slug": "saude-e-bem-estar",
-      "quantidade": 319
+      "quantidade": 331
     },
     {
       "nome": "Pets",
@@ -60,7 +60,7 @@
     {
       "nome": "Hobbies e Coleções",
       "slug": "hobbies-e-colecoes",
-      "quantidade": 199
+      "quantidade": 183
     }
   ]
 }
